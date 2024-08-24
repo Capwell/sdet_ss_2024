@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "sdet-ss-2024"
+version = "0.1.0"
+description = "тестовое задание SimbirSoft по SDET_2024"
+authors = ["Capwell <proninc@yandex.ru>"]
+readme = "README.md"
+packages = [{include = "sdet_ss_2024"}]
+
+[tool.poetry.dependencies]
+python = "3.10.14"
+pytest = "^8.3.2"
+selenium = "^4.23.1"
+allure-pytest = "^2.13.5"
+requests = "^2.32.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+markers = [
+    "smoke: smoke tests",
+    "webtest: regular tests", 
+]
