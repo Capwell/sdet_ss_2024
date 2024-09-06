@@ -5,8 +5,8 @@ from selenium import webdriver
 
 from pathlib import Path
 
-from .settings import BASE_DIR
-from .pages.registration_page import RegistrationPage
+from ..settings import BASE_DIR
+from ..pages.registration_page import RegistrationPage
 
 
 @pytest.fixture
@@ -20,7 +20,7 @@ def driver():
 def modal_window(request):
     link = "https://demoqa.com/automation-practice-form"
     driver = webdriver.Chrome()
-    test_image = Path(BASE_DIR, "fixtures", "test.jpg")
+    test_image = Path(BASE_DIR, "tests/fixtures", "test.jpg")
 
     data = {
         "first_name": "Иван",
@@ -44,3 +44,5 @@ def modal_window(request):
     page.fill_registration_form(**data)
     page.push_submit_button()
     request.cls.modal_window = page
+    yield
+    driver.quit()
