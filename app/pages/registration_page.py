@@ -28,7 +28,7 @@ class RegistrationPage(BasePage):
         """
             Ожидаем день, год в формате строки вида dd Month,yyyy
             Месяц, как английское название с заглавной.
-            Например, "12 March,1977"
+            Например, "12 March,1977".
         """
         dd, month, yyyy = re.split(",| ", dd_month_yyyy)
         self.click(Locators.LOCATOR_BIRTH_DATEPICKER)
@@ -44,7 +44,7 @@ class RegistrationPage(BasePage):
     def set_subjects(self, input):
         """
             Список предметов с заглавной.
-            Пример: ["Chemistry", "Social Studies"]
+            Пример: ["Chemistry", "Social Studies"].
         """
         element = self.find_element(Locators.LOCATOR_SUBJECTS_FIELD)
         for subject in input:

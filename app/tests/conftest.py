@@ -1,10 +1,7 @@
 import pytest
-
 from selenium import webdriver
 
-
 from pathlib import Path
-
 from ..settings import BASE_DIR
 from ..pages.registration_page import RegistrationPage
 
